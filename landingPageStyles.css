@@ -1,0 +1,135 @@
+/*------------------------------------------------MAIN PAGE----------------------------------------*/
+/* Variables */
+:root {
+    /* Colors */
+    --background-color: #6e7e85;
+    --header-color: #999999;
+    --main-cont-color: #e2e2e2;
+    --header-font: 'Cairo Play', serif;
+    --header-rad: 20px;
+    --main-cont-border-rad: 15px;
+}
+
+/* Reset all margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Background */
+body {
+    padding: 10px;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://media.istockphoto.com/photos/binary-code-picture-id122204403?b=1&k=20&m=122204403&s=612x612&w=0&h=JbzHWqm4BVsUnafaeXO_gerTkbHVq_pYglH4wvOy1KQ=");
+    background-size: 500px 800px;
+}
+
+/* ---------------------------------------------------HEADER-----------------------------------------*/
+/* Rounded page header with name */
+div#pageHeader {
+    /* Layout */
+    background-color: var(--header-color);
+    outline: var(--main-cont-color) 3px solid;
+    border-radius: var(--header-rad);
+    /* Text */
+    text-align: center;
+    font-family: var(--header-font);
+    font-size: 15pt;
+}
+
+/* Bold last name in the header */
+span#lastName {
+    font-family: var(--header-font);
+    font-weight: bold;
+    color: var(--main-cont-color);
+    text-shadow: 2px 2px 4px black;
+}
+
+/*------------------------------------------CENTRAL PAGE CONTENT-----------------------------------------*/
+/* Style for all H2 headers */
+h2 {
+    padding: 5px 15px;
+}
+
+/* Main page container */
+div.mainContent {
+    /* Layout */
+    background-color: var(--main-cont-color);
+    border-radius: var(--main-cont-border-rad);
+    margin-top: 10px;
+    overflow: auto;
+    /* Text */
+    text-align: justify;
+    font-family: 'M PLUS Rounded 1c', serif;
+    font-weight: lighter;
+}
+
+/* Main container title */
+div#CSIS304 {
+    /* Layout */
+    border-radius: var(--main-cont-border-rad) var(--main-cont-border-rad) 0 0;
+    background-color: #9fc2cc;
+    margin: 0;
+    /* Text */
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+}
+
+/* ----------------------------------------------PROJECT CARDS----------------------------------------*/
+
+.projectCard {
+    border: white 2px solid;
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 30%;
+    height: 200px;
+    margin: 20px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    perspective: 1000px;
+}
+
+.projectCardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    transform-style: preserve-3d    ;
+}
+
+.projectCardFront, div.projectCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.projectCardFront {
+    background-color: #bbb;
+    color: black;
+}
+
+/* Style the back of the project cards */
+.projectCardBack {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
+/*
+div.projectCard:hover, div.projectCardInner {
+    transform: rotateY(180deg);
+    transition: 0.5s;
+}*/
+
+div#mainContentContainer {
+    padding: 10px;
+}

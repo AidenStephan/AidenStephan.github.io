@@ -4,31 +4,47 @@
     <meta charset="UTF-8">
     <title>Aiden Stephan</title>
     <link rel="stylesheet" href="landingPageStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@300;500&family=M+PLUS+Rounded+1c:wght@300;700&family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@300&family=M+PLUS+Rounded+1c:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@300;500&family=M+PLUS+Rounded+1c:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <h1>Aiden Stephan</h1>
+    <div id="pageHeader">
+        <h1>Aiden <span id="lastName">Stephan</span></h1>
     </div>
-    <h2>CSIS 304</h2>
-    <div class="projectCard">
-        <p>Projects</p>
-        <span>
-            <h3>DefinitelyNotSketchy.com</h3>
-            <p>
-                <span class="asgnTitle">Assignment:</span>
-                <span> Exercise 1</span>
-            </p>
-            <img>
-        </span>
-        <span>
-            <h3>DefinitelyNotSketchy.com</h3>
-            <p>
-                <span class="asgnTitle">Assignment:</span>
-                <span> Exercise 1</span>
-            </p>
-            <img>
-        </span>
+    <div class="mainContent">
+        <div id="CSIS304">
+            <h2>CSIS 304</h2>
+        </div>
+        <div id="mainContentContainer">
+            <p>Projects</p>
+            <div class="projectCard">
+                <div class="projectCardInner">
+                    <div class="projectCardFront">
+                        <h3>Project 1</h3>
+                        <p>
+                            <span class="asgnTitle">Assignment:</span>
+                            <span> Exercise 1</span>
+                        </p>
+                    </div>
+                    <div class="projectCardBack">
+                        <p>fast cars</p>
+                    </div>
+                </div>
+            </div>
+            <div class="projectCard">
+                <h3>Coming soon</h3>
+                <p>
+                    <span class="asgnTitle">Assignment:</span>
+                    <span> Exercise 1</span>
+                </p>
+                <img>
+            </div>
+        </div>
     </div>
+    <script src="landingPageFunction.js"></script>
 </body>
 </html>
 
