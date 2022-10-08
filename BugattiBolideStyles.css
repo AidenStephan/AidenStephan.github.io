@@ -1,0 +1,49 @@
+/* Declare all document variables */
+:root {
+    --bugatti-blue: #3d8ebe;
+}
+
+/* Reset all margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div.pageHeader {
+    background-color: var(--bugatti-blue);
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 0px;
+}
+
+div.pageHeader h1 {
+    font-family: Satisfy, cursive;
+    color: white;
+}
+
+div.pageHeader h1 span {
+    font-family: sans-serif, serif;
+    font-weight: bold;
+}
+
+#bolideH1 {
+    font-style: italic;
+}
+
+p {
+    color: blue;
+}
+
+.pageBody {
+    margin: 20px;
+    padding: 20px;
+    background-color: lightgrey;
+    border-radius: 20px;
+}
+
+.historyPic {
+    width: 20%;
+    border: white solid 2px;
+    border-radius: 5px;
+}
