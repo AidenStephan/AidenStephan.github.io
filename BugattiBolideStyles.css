@@ -12,7 +12,7 @@
 div.pageHeader {
     background-color: var(--bugatti-blue);
     padding: 10px;
-    position: relative;
+    position: fixed;
     width: 100%;
     margin-top: 0px;
 }
@@ -32,7 +32,7 @@ div.pageHeader h1 span {
 }
 
 p {
-    color: blue;
+    color: darkblue;
 }
 
 .pageBody {
@@ -46,4 +46,30 @@ p {
     width: 20%;
     border: white solid 2px;
     border-radius: 5px;
+}
+
+button {
+    color: darkblue;
+    background-color: lightgrey;
+    padding: 7px;
+    width: 120px;
+    border-radius: 5px;
+    font-variant: small-caps;
+    margin-top: 10px;
+}
+
+button:hover {
+    color: white;
+    background-color: var(--bugatti-blue);
+    border-color: white;
+    cursor: pointer;
+}
+
+th, td {
+    width: 40%;
+    border: white solid 1px;
+}
+
+.spacer {
+    height: 110px;
 }
