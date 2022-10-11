@@ -73,3 +73,8 @@ th, td {
 .spacer {
     height: 110px;
 }
+
+table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
