@@ -1,0 +1,148 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+@font-face {
+    font-family: 'asian-brush-font';
+    src: url('/Fonts/Aokahori-font/Aokahori-K7PXy.ttf');
+}
+
+@font-face {
+    font-family: 'fancy-pattern-font';
+    src: url('/Fonts/kawoszeh/kawoszeh.ttf');
+}
+
+@font-face {
+    font-family: 'main-page-font';
+    src: url('/Fonts/z-arista/Arista2.0 light.ttf');
+}
+
+
+/* Setting the margins and padding to 0 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: asian-brush-font, serif;
+    font-size: 30pt;
+    border-radius: 20px;
+}
+
+h1, footer {
+    padding: 10px;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 100%);
+    text-align: center;
+}
+
+footer {
+    margin-top: 20px;
+    font-family: main-page-font, serif;
+    text-shadow: 1px 1px #000000;
+    border-radius: 4px;
+}
+
+body {
+    background-image:
+            linear-gradient(rgba(0, 0, 0, 0),
+            rgba(255, 255, 255, 100)),
+            url("https://ychef.files.bbci.co.uk/976x549/p0bzmxtx.jpg");
+    background-size: 120%;
+}
+
+h3 {
+    font-family: fancy-pattern-font, serif;
+    color: #bfa160;
+}
+
+p {
+    font-family: "main-page-font", serif;
+    padding: 5px;
+    color: white;
+}
+
+#zen-supporting, .wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: rgb(0, 0, 0, 60%);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#zen-supporting {
+    float: left;
+    width: calc(75% - 60px);
+}
+
+.wrapper {
+    float: right;
+    vertical-align: middle;
+    width: calc(25% - 40px);
+    margin-right: 20px;
+}
+
+.summary {
+    background-image: url("/Images/BrushStroke.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% -15%;
+    text-align: center;
+    height: 125px;
+    color: white;
+    margin: auto;
+    width: 40%;
+    padding-top: 13px;
+}
+
+.summary p {
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    padding-top: 5px;
+    font-size: 10pt;
+    font-family: main-page-font, serif;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+h2 {
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+    font-family: fancy-pattern-font, serif;
+    color: #4a2c2a;
+}
+
+a {
+    color: sandybrown;
+}
+
+.explanation, .benefits, .design-selection, .zen-resources {
+    border-image: linear-gradient(to right, rgba(200, 200, 200, 100), rgba(0,0,0,0)) 1;
+    border-style: solid;
+    border-width: 2px;
+    padding: 10px;
+}
+
+.participation, .requirements, .design-archives {
+    border-image: linear-gradient(to right, rgba(0,0,0,0), rgba(200, 200, 200, 100)) 1;
+    border-style: solid;
+    border-width: 2px;
+    padding: 10px;
+}
+
+li {
+    font-family: main-page-font, serif;
+    margin: 10px;
+    color: white;
+}
