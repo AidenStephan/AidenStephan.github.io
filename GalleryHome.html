@@ -2,17 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Stock Image Generator</title>
+<!--    <link rel="stylesheet" href="GalleryStyles.css">-->
 </head>
 <body>
     <h1>Image Search</h1>
+    <p>This will take any input, but any inappropriate results will not be returned.</p>
     <div>
         <form>
-            <label for="imgSubject">Enter a Subject:</label>
+            <label for="imgSubject">Enter a Subject: </label>
             <input type="text" id="imgSubject"><br>
-            <input type="submit" id="submitBtn">
+            <input type="submit" id="submitBtn"><br>
         </form>
-<!--        <button type="button" id="submitBtn">Submit to Database</button>-->
+        <form>
+            <label for="numImgs">Number of Images to be Displayed: </label>
+            <select id="numImgs">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
+            <input type="submit" id="imgNumBtn" value="Update">
+        </form>
     </div>
     <div>
         <button type="button">2022</button>
@@ -22,6 +33,11 @@
     </div>
     <div>
         <img id="img1" src="" alt="random image">
+        <img id="img2" src="" alt="random image">
+        <img id="img3" src="" alt="random image">
+        <img id="img4" src="" alt="random image">
+        <img id="img5" src="" alt="random image">
+        <img id="img6" src="" alt="random image">
     </div>
 <script src="GalleryHomeFunction.js"></script>
 </body>
