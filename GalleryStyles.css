@@ -3,5 +3,23 @@ img {
     padding: 5px;
     margin: 5px;
     border-radius: 5px;
-    width: 40%;
+    width: 30%;
+    height: 600px;
+}
+
+@keyframes colorChange {
+    from {background-color: lightgray;}
+    to {background-color: lightblue;}
+}
+
+h1 {
+    text-align: center;
+
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 5px 10px 5px;
+    animation-name: colorChange;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
