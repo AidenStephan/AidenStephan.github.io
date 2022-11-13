@@ -16,7 +16,9 @@ let inputText = document.getElementById("imgSubject");
 let subjectQuery;
 let unsplashUrl = "https://api.unsplash.com/search/photos";
 let clientId = "7qYCm8Ow4ntFgiF61Pqu1MncO7FSN66wtHI5CzoCqMo";
-let pages = "1";
+let itemsPerPage = "25"
+let pages = "4";
+
 
 // -------------------------------------------------- FUNCTIONS --------------------------------------------------------
 /**
@@ -26,21 +28,29 @@ let pages = "1";
  * @returns JSON data received from Unsplash
  */
 async function getImages() {
-   // Assembles the request link for Unsplash.
-   let url = `${unsplashUrl}?client_id=${clientId}&page=${pages}&query=${subjectQuery}`;
-   let data;
+   let dataSet = [];
 
-   // Gets the image data from Unsplash.
-   let response = await fetch(url);
-   if (response.ok) {
-      data = await response.json();
+   for (let i = 1; i <= pages; i ++) {
+      // Assembles the request link for Unsplash.
+      let url = `${unsplashUrl}?client_id=${clientId}&page=${i}&query=${subjectQuery}&per_page=${itemsPerPage}`;
+      let data;
+
+      // Gets the image data from Unsplash.
+      let response = await fetch(url);
+      if (response.ok) {
+         data = await response.json();
+         console.log("DATA: ")
+         console.log(data);
+      } else {
+         data = false;
+      }
+      dataSet[i-1] = data;
+      // dataSet = data;
    }
-   else {
-      data = false;
-   }
+
 
    // Returns the full JSON data received from Unsplash.
-   return data;
+   return dataSet;
 }
 
 /**
@@ -62,25 +72,30 @@ function updateImages(imageData) {
    // TODO: make sure that enough images are received to display
    // TODO: make this the input amount of images to display.
    let numImgs = 6;
-   let numReturnedImgs = Object.keys(imageData).length;
+   let numReturnedImgs = pages * itemsPerPage;
+   let imgUrls = [];
 
-   let htmlImgNums = Array.from(new Array(6), (x, i) => i)
-               .sort((a, b) => 0.5 - Math.random());
-
-   let receivedImgNums = Array.from(new Array(numReturnedImgs), (x, i) => i)
+   let htmlImgNums = Array.from(new Array(numImgs), (x, i) => i)
        .sort((a, b) => 0.5 - Math.random());
 
-   for (let i = 0; i < htmlImgNums.length; i++) {
-      console.log(i);
-      console.log(imageData[receivedImgNums[i]].urls.regular);
-      setImage(htmlImgNums[i], imageData[receivedImgNums[i]].urls.regular);
+   let receivedImgNums = Array.from(new Array(numReturnedImgs - 1), (x, i) => i)
+       .sort((a, b) => 0.5 - Math.random());
+
+   for (let i = 0; i < pages; i++) {
+      for (let j = 0; j < itemsPerPage; j++) {
+         imgUrls.push(imageData[i][j].urls.regular);
+      }
    }
 
-
-   console.log("number array: " + htmlImgNums);
-   console.log("results array: " + receivedImgNums);
-   // setImage(1, imageData[1].urls.regular)
-   console.log("number of images: " + Object.keys(imageData).length);
+   for (let i = 0; i < numImgs; i++) {
+      setImage(i, imgUrls[i]);
+   }
+   //
+   //
+   // console.log("number array: " + htmlImgNums);
+   // console.log("results array: " + receivedImgNums);
+   // // setImage(1, imageData[1].urls.regular)
+   // console.log("number of images: " + Object.keys(imageData).length);
 
 }
 
@@ -102,14 +117,18 @@ submitBtn.addEventListener("click", (e) => {
    e.preventDefault();
    getInput();
 
-   getImages().then((result) => {
-      let values = Object.values(result);
+   getImages().then((receivedData) => {
+      for (let i = 0; i < receivedData.length; i++) {
+         receivedData[i] = Object.values(receivedData[i])[2];
+      }
+      // let values = Object.values(result);
       // let imageUrl = values[2][2].urls.regular;
-      return values[2];
+      return receivedData;
    }).then((imagesData) => {
       updateImages(imagesData);
    });
 });
+
 
 
 // TODO: ideas: Make 'download buttons.'
