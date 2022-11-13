@@ -70,14 +70,16 @@ function updateImages(imageData) {
    let receivedImgNums = Array.from(new Array(numReturnedImgs), (x, i) => i)
        .sort((a, b) => 0.5 - Math.random());
 
-   // for (let i = 0; i < htmlImgNums.length; i++) {
-   //    setImage(htmlImgNums[i], imageData[receivedImgNums[i]].urls.regular)
-   // }
+   for (let i = 0; i < htmlImgNums.length; i++) {
+      console.log(i);
+      console.log(imageData[receivedImgNums[i]].urls.regular);
+      setImage(htmlImgNums[i], imageData[receivedImgNums[i]].urls.regular);
+   }
 
 
    console.log("number array: " + htmlImgNums);
    console.log("results array: " + receivedImgNums);
-   setImage(1, imageData[1].urls.regular)
+   // setImage(1, imageData[1].urls.regular)
    console.log("number of images: " + Object.keys(imageData).length);
 
 }

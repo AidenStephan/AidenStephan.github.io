@@ -1,0 +1,7 @@
+img {
+    border: solid lightgrey 1px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 40%;
+}
