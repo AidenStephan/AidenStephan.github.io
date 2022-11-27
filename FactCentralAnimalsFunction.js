@@ -9,7 +9,8 @@ let screenWidth = screen.width;
 let htmlRoot = document.querySelector(":root");
 
 let catFactsUrl = "https://meowfacts.herokuapp.com/"
-let dogFactsUrl = "http://dog-api.kinduff.com/api/facts/?number=1"
+let dogFactsUrl = "https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=1"
+let zooAnimalFactsUrl = "https://zoo-animal-api.herokuapp.com/animals/rand";
 
 htmlRoot.style.setProperty("--page-width", `${screenWidth}px`)
 console.log("HIIII");
@@ -66,7 +67,7 @@ getFactBtn.addEventListener("click", e => {
       functionResult = getCritterFact(dogFactsUrl);
    }
    else if (animalType === "zoo") {
-      functionResult = getZooAnimalFact();
+      functionResult = getCritterFact(zooAnimalFactsUrl);
    }
 
    functionResult.then((receivedData) => {

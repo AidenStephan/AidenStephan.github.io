@@ -45,6 +45,10 @@ span#lastName {
     text-shadow: 2px 2px 4px black;
 }
 
+h3 {
+    margin: 15px;
+}
+
 /*------------------------------------------CENTRAL PAGE CONTENT-----------------------------------------*/
 /* Style for all H2 headers */
 h2 {
@@ -76,10 +80,12 @@ div#CSIS304 {
 }
 
 /* ----------------------------------------------PROJECT CARDS----------------------------------------*/
+h4 {
+    color: purple;
+}
 
 .projectCard {
     border: white 2px solid;
-    float: left;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 30%;
     height: 200px;
@@ -87,6 +93,8 @@ div#CSIS304 {
     padding: 10px;
     border-radius: 5px;
     transition: 0.6s;
+    flex: 1;
+    text-decoration: none;
 }
 
 .projectCard:hover {
@@ -102,4 +110,18 @@ div#CSIS304 {
 
 div#mainContentContainer {
     padding: 10px;
+    display: flex;
 }
+
+div.projectCardContents * {
+    text-align: center;
+    vertical-align: bottom;
+    text-decoration: none;
+    color: black;
+}
+
+div.projectCardContents *:visited {
+    color: black;
+    text-decoration: none;
+}
+
