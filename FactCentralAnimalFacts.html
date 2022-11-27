@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fact Central - Animals</title>
+    <link rel="stylesheet" href="FactCentralStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Cairo+Play:wght@300;500&family=M+PLUS+Rounded+1c:wght@300;700&family=Rajdhani:wght@300&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300;400&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="pageHeader">
+    <img class="pageIcon" src="https://cdn-icons-png.flaticon.com/512/858/858045.png" alt="lightbulb">
+    <h1>Fact Central</h1>
+    <span class="menuItems">
+        <button class="navBtn inHeader" id="homeBtn">home</button>
+        <button class="navBtn inHeader" id="animalFactsBtn">animal facts</button>
+        <button class="navBtn inHeader" id="uselessFactsBtn">useless facts</button>
+        <button class="navBtn inHeader" id="factOrFictBtn">fact or fiction?</button>
+    </span>
+</div>
+<div class="mainPage" id="mainPageContainer">
+  <div class="pageTile" id="titleTile">
+    <span>
+      <h2>Animal Facts</h2>
+      <form class="customSelect">
+            <label for="animalType">Select an Animal Type: </label>
+            <select id="animalType">
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+                <option value="zoo">Random Zoo Animal</option>
+            </select>
+            <input type="submit" id="getFactBtn" value="Get a Fact!">
+        </form>
+    </span>
+  </div>
+    <div id="factsContainer">
+    </div>
+</div>
+<script src="FactCentralAnimalsFunction.js"></script>
+</body>
+</html>

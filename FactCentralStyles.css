@@ -1,0 +1,189 @@
+/*-------------------- VARIABLES & SETUP ---------------------*/
+:root {
+    /* Dimensions */
+    --page-width: 1920px;
+    --normal-margin: calc(var(--page-width) * (1/100));
+
+    /* Colors */
+    --yellow: #ffdf35;
+    --dark-yellow: #cba12f;
+    --light-blue: #e2fcc2;
+    --medium-blue: #6b9269;
+    --blue-green: #3b6750;
+    --dark-blue: #144354
+}
+
+/* Reset all margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------- HEADER & NAV BAR ---------------------*/
+/* Header Container Div */
+.pageHeader {
+    padding: calc(var(--normal-margin) * 0.5);
+    background-color: var(--blue-green);
+}
+
+/* Header Text */
+h1 {
+    display: inline-block;
+    margin: var(--normal-margin);
+    vertical-align: middle;
+    font-family: 'Amatic SC', cursive;
+    color: var(--light-blue);
+}
+
+/* Lightbulb Icon on Nav Bar */
+.pageIcon {
+    width: calc(var(--normal-margin) * 3);
+    padding: calc(var(--normal-margin) * 0.75);
+    vertical-align: middle;
+    background-color: var(--medium-blue);
+    border: none;
+    border-radius: 100%;
+}
+
+/*--------------------------- BUTTONS --------------------------*/
+/* Navigation Buttons */
+.navBtn {
+    padding: var(--normal-margin);
+    width: 50px;
+    border-radius: 10px;
+    background-image: linear-gradient(to top left, var(--dark-yellow), var(--yellow));
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: calc(8*var(--normal-margin))pt;
+    border: 2px var(--blue-green) solid;
+    color: var(--blue-green);
+    /*    TODO: add arrow to buttons*/
+}
+
+/* Button & Nav Tile Hover */
+.navBtn:hover, .btnHover {
+    cursor: pointer;
+    border: 2px var(--light-blue) solid;
+    font-weight: bold;
+    outline: none;
+}
+
+.menuItems {
+    display: flex;
+    float: right;
+    width: calc(50 * var(--normal-margin));
+}
+
+.inHeader {
+    flex: 1;
+    margin: calc(0.6 * var(--normal-margin));
+}
+
+.inNavTile {
+    width: 100%;
+}
+
+/*---------------- NAVIGATION TILES (HOME PAGE) ---------------*/
+/* Navigation Tile Container Div */
+#navTileContainer {
+    display: flex;
+    margin: calc(var(--normal-margin) * 2.5);
+}
+
+/* Navigation Tile */
+.navTile {
+    flex: 1;
+    background-color: var(--light-blue);
+    height: calc(3 * var(--normal-margin));
+    margin: calc(var(--normal-margin) * 2.5);
+    margin-top: 0;
+    -webkit-transition: height 0.25s;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+/* Navigation Tile After Link is Visited */
+.navTile:visited {
+    color: black;
+}
+
+/* Navigation Tile When it is Being Clicked */
+.navTile:active {
+    color: var(--dark-yellow);
+}
+
+/* Navigation Tile Hover */
+.navTile:hover {
+    height: calc(var(--normal-margin) * 15);
+    -webkit-transition: height 0.25s;
+    border-radius: 10px;
+}
+
+/* Navigation Tile Text */
+.navTileText {
+    display: none;
+    margin: var(--normal-margin);
+    -webkit-transition: display 0.25s;
+}
+
+/*------------------------ MAIN PAGE -------------------------*/
+/* Main Page Background */
+body {
+    background-color: var(--dark-blue);
+}
+
+/*--------------------- PAGE CONTENT TILE --------------------*/
+/* Page Tile Container Div */
+.pageTile {
+    background-color: var(--light-blue);
+    padding: var(--normal-margin);
+    margin: calc(var(--normal-margin) * 5);
+    border-radius: 10px;
+}
+
+#titleTile {
+    display: flex;
+}
+
+/* Image on Page Tile */
+.tileImg {
+    padding-left: var(--normal-margin);
+    height: calc(var(--normal-margin) * 15);
+    object-fit: cover;
+    flex: 1;
+}
+
+/*------------------------ PAGE TEXT ------------------------*/
+p {
+    text-align: justify;
+    /*padding: 500px;*/
+}
+
+h2 {
+    margin-bottom: calc(var(--normal-margin) * 0.5);
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+/*--------------------- DROPDOWN SELECT ----------------------*/
+option {
+    font-family: "Times New Roman", serif;
+    font-size: 11pt;
+    color: green;
+    background-color: black;
+}
+
+option:hover {
+    color: green;
+    cursor: pointer;
+    background-color: purple;
+}
+
+select {
+    width: 200px;
+    font-family: "Times New Roman", serif;
+    font-size: 11pt;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    background-image: linear-gradient(to top left, var(--dark-yellow), var(--yellow));
+}
+
