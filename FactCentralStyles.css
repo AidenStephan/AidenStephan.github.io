@@ -2,7 +2,6 @@
 :root {
     /* Dimensions */
     --page-width: 1920px;
-    --normal-margin: calc(var(--page-width) * (1/100));
 
     /* Colors */
     --yellow: #ffdf35;
@@ -22,23 +21,23 @@
 /*-------------------- HEADER & NAV BAR ---------------------*/
 /* Header Container Div */
 .pageHeader {
-    padding: calc(var(--normal-margin) * 0.5);
+    padding: 0.5vw;
     background-color: var(--blue-green);
 }
 
 /* Header Text */
 h1 {
     display: inline-block;
-    margin: var(--normal-margin);
+    margin: 1vw;
     vertical-align: middle;
     font-family: 'Amatic SC', cursive;
     color: var(--light-blue);
 }
 
-/* Lightbulb Icon on Nav Bar */
+/* Light Bulb Icon on Nav Bar */
 .pageIcon {
-    width: calc(var(--normal-margin) * 3);
-    padding: calc(var(--normal-margin) * 0.75);
+    width: 3vw;
+    padding: 0.75vw;
     vertical-align: middle;
     background-color: var(--medium-blue);
     border: none;
@@ -48,15 +47,32 @@ h1 {
 /*--------------------------- BUTTONS --------------------------*/
 /* Navigation Buttons */
 .navBtn {
-    padding: var(--normal-margin);
-    width: 50px;
-    border-radius: 10px;
     background-image: linear-gradient(to top left, var(--dark-yellow), var(--yellow));
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: calc(8*var(--normal-margin))pt;
     border: 2px var(--blue-green) solid;
     color: var(--blue-green);
-    /*    TODO: add arrow to buttons*/
+    padding: 1vw;
+}
+
+#getFactBtn {
+    background-color: var(--blue-green);
+    border: 2px var(--blue-green) solid;
+    color: var(--light-blue);
+    width: 10vw;
+    flex: 1;
+    height: 50px;
+}
+
+.navBtn, #getFactBtn {
+    border-radius: 10px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: calc(0.2 * var(--page-width))pt;
+}
+
+#getFactBtn:hover {
+    cursor: pointer;
+    border: 2px var(--dark-blue) solid;
+    font-weight: bold;
+    outline: none;
 }
 
 /* Button & Nav Tile Hover */
@@ -70,12 +86,12 @@ h1 {
 .menuItems {
     display: flex;
     float: right;
-    width: calc(50 * var(--normal-margin));
+    width: 50vw;
 }
 
 .inHeader {
     flex: 1;
-    margin: calc(0.6 * var(--normal-margin));
+    margin: 0.6vw;
 }
 
 .inNavTile {
@@ -86,16 +102,15 @@ h1 {
 /* Navigation Tile Container Div */
 #navTileContainer {
     display: flex;
-    margin: calc(var(--normal-margin) * 2.5);
+    margin: 2.5vw;
 }
 
 /* Navigation Tile */
 .navTile {
     flex: 1;
     background-color: var(--light-blue);
-    height: calc(3 * var(--normal-margin));
-    margin: calc(var(--normal-margin) * 2.5);
-    margin-top: 0;
+    height: 20px;
+    margin: 0 2.5vw 2.5vw 2.5vw;
     -webkit-transition: height 0.25s;
     border-radius: 10px;
     text-decoration: none;
@@ -113,15 +128,15 @@ h1 {
 
 /* Navigation Tile Hover */
 .navTile:hover {
-    height: calc(var(--normal-margin) * 15);
-    -webkit-transition: height 0.25s;
+    height: calc(1 / var(--page-width))px;
+    -webkit-transition: height 1.25s;
     border-radius: 10px;
 }
 
 /* Navigation Tile Text */
 .navTileText {
     display: none;
-    margin: var(--normal-margin);
+    margin: 1vw;
     -webkit-transition: display 0.25s;
 }
 
@@ -135,8 +150,8 @@ body {
 /* Page Tile Container Div */
 .pageTile {
     background-color: var(--light-blue);
-    padding: var(--normal-margin);
-    margin: calc(var(--normal-margin) * 5);
+    padding: 1vw;
+    margin: 5vw;
     border-radius: 10px;
 }
 
@@ -146,8 +161,8 @@ body {
 
 /* Image on Page Tile */
 .tileImg {
-    padding-left: var(--normal-margin);
-    height: calc(var(--normal-margin) * 15);
+    padding-left: 1vw;
+    height: 15vw;
     object-fit: cover;
     flex: 1;
 }
@@ -155,11 +170,10 @@ body {
 /*------------------------ PAGE TEXT ------------------------*/
 p {
     text-align: justify;
-    /*padding: 500px;*/
 }
 
 h2 {
-    margin-bottom: calc(var(--normal-margin) * 0.5);
+    margin-bottom: 0.5vw;
     font-family: 'Alegreya Sans SC', sans-serif;
 }
 
@@ -167,14 +181,8 @@ h2 {
 option {
     font-family: "Times New Roman", serif;
     font-size: 11pt;
-    color: green;
-    background-color: black;
-}
-
-option:hover {
-    color: green;
-    cursor: pointer;
-    background-color: purple;
+    color: var(--dark-blue);
+    background-color: var(--dark-yellow);
 }
 
 select {

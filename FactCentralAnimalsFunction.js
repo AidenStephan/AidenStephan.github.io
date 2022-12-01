@@ -9,8 +9,8 @@ let screenWidth = screen.width;
 let htmlRoot = document.querySelector(":root");
 
 let catFactsUrl = "https://meowfacts.herokuapp.com/"
-let dogFactsUrl = "https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=1"
-let zooAnimalFactsUrl = "https://zoo-animal-api.herokuapp.com/animals/rand";
+let dogFactsUrl =  "https://api.codetabs.com/v1/proxy?quest=https://dog-api.kinduff.com/api/facts";
+let zooAnimalFactsUrl = "https://api.api-ninjas.com/v1/animals?name=cheetah";
 
 htmlRoot.style.setProperty("--page-width", `${screenWidth}px`)
 console.log("HIIII");
@@ -71,6 +71,8 @@ getFactBtn.addEventListener("click", e => {
    }
 
    functionResult.then((receivedData) => {
+      console.log("DATA: ");
+      console.log(receivedData);
       displayFact(Object.values(receivedData)[0][0]);
    });
 });
