@@ -2,20 +2,34 @@
 /**
  * Provides the function for the "Useless Facts" page of my Fact Central webpage.
  *
- * @type {HTMLElement} FactCentralUselessFacts.html
+ * @type {any[]} FactCentralUselessFacts.html
  * @author astephan18@georgefox.edu
  */
+let falseFactsData;
+let trueFactsData;
+
+let factIndex = 0;
+
 // Getting buttons
 let homeBtn = document.getElementById("homeBtn");
 let animalFactsBtn = document.getElementById("animalFactsBtn");
 let uselessFactsBtn = document.getElementById("uselessFactsBtn");
 let gameStartBtn = document.getElementById("gameStartBtn");
 let gameResetBtn = document.getElementById("gameResetBtn");
+let gameTrueBtn = document.getElementById("gameTrueBtn");
+let gameFalseBtn = document.getElementById("gameFalseBtn");
+let gameNextBtn = document.getElementById("gameNextBtn");
 let titleTile = document.getElementById("titleTile");
+let gameText = document.getElementsByClassName("gameText");
 // let getFactBtn = document.getElementById("getFactBtn");
+
+let falseFactsUrl = "FactCentralFalseFacts.txt";
+let trueFactsUrl = "https://api.api-ninjas.com/v1/facts?limit=20";
+let trueFactsApiKey = {headers: { 'X-Api-Key': '9YyytL8gs2AWjPg75vHpPQ==cCNa5FtJq7qLHWa4'}};
 
 // Getting other elements
 let gameContainer = document.getElementById("gameContainer");
+let currentFact;
 
 // Getting properties
 let screenWidth = screen.width;
@@ -51,11 +65,11 @@ uselessFactsBtn.addEventListener('click', () => {
     window.location = "FactCentralUselessFacts.html";
 });
 
-async function fetchFromAPI(url) {
+async function fetchFile(url, details) {
     let data;
 
     // Fetch data from API at url.
-    let response = await fetch(url);
+    let response = await fetch(url, details);
     if (response.ok) {
         data = await response.json();
     } else {
@@ -65,11 +79,44 @@ async function fetchFromAPI(url) {
     return data;
 }
 
+function getRandomFact() {
+    let factData;
+    let falseOrTrue = Math.random() < 0.5;
 
-function getFile() {
-    fetchFromAPI("FactCentralFalseFacts.txt").then((receivedData) => {
-        console.log(receivedData);
+    if (falseOrTrue) {
+        factData = {"text": trueFactsData[factIndex].fact, "answer": "True", "explanation": ""};
+    }
+    else {
+        factData = falseFactsData[factIndex];
+    }
+    factIndex ++;
+
+    return factData;
+}
+
+function resetGame() {
+    fadeOut(gameResetBtn, 250);
+    gameResetBtn.getAnimations()[0].finished.then(() => {
+        fadeIn(gameStartBtn, 250);
     });
+    fadeOut(gameText[0], 250);
+    fadeOut(gameText[1], 250);
+    fadeOut(gameText[2], 250);
+    fadeOut(gameTrueBtn, 250);
+    fadeOut(gameFalseBtn, 250);
+
+    gameText[0].getAnimations()[0].finished.then(() => {
+        fadeOut(gameContainer, 750);
+        stretchHeight(gameContainer, gameContainer.style.height, "10%", 500);
+        stretchWidth(gameContainer, gameContainer.style.width, "10%", 500);
+        gameContainer.getAnimations()[0].finished.then(() => {
+            stretchHeight(titleTile,
+                `${titleTile.offsetHeight}px`,
+                `${titleTile.offsetHeight - 150}px`,
+                750);
+        });
+    });
+    factIndex = 0;
 }
 
 function startGame() {
@@ -83,18 +130,89 @@ function startGame() {
         750);
     titleTile.getAnimations()[0].finished.then(() => {
         fadeIn(gameContainer, 750);
-        stretchHeight(gameContainer, gameContainer.style.height, "39%", 500);
-        stretchWidth(gameContainer, gameContainer.style.width, "100%", 500);
+        stretchHeight(gameContainer, gameContainer.style.height, "50%", 500);
+        stretchWidth(gameContainer, gameContainer.style.width, "150%", 500);
+        gameContainer.getAnimations()[0].finished.then(() => {
+            fadeIn(gameText[0], 250);
+            fadeIn(gameText[1], 250);
+            fadeIn(gameText[2], 250);
+            fadeIn(gameTrueBtn, 250);
+            fadeIn(gameFalseBtn, 250);
+        });
     });
-    // TODO: add true and false buttons.
+    fetchFile(falseFactsUrl).then((receivedData) => {
+        falseFactsData = Object.values(receivedData).sort((a, b) => 0.5 - Math.random());
+        return fetchFile(trueFactsUrl, trueFactsApiKey);
+    }).then((factsData) => {
+        trueFactsData = Object.values(factsData);
+        playGame();
+    });
 
-    playGame();
+}
+
+function displayResults() {
+    factIndex = 0;
+    for (let text of gameText) {
+        fadeOut(text, 250);
+    }
+    fadeOut(gameTrueBtn);
+    fadeOut(gameFalseBtn);
 }
 
 function playGame() {
-    getFile();
-    // getFalseFact();
+    if (factIndex < 10) {
+        gameText[0].children[0].innerHTML = String(factIndex + 1);
+        currentFact = getRandomFact();
+        gameText[1].innerHTML = currentFact.text;
+    }
+    else {
+        displayResults();
+    }
 }
+
+gameTrueBtn.addEventListener("click", () => {
+    if (currentFact.answer === "False") {
+        gameText[3].innerHTML = 'Incorrect. This is false.';
+        gameText[4].innerHTML = currentFact.explanation;
+        fadeIn(gameText[3], 250);
+        fadeIn(gameText[4], 250);
+    }
+    else if (currentFact.answer === "True") {
+        gameText[3].innerHTML = "True.";
+        gameText[4].innerHTML = "Well done!";
+        fadeIn(gameText[3], 250);
+        fadeIn(gameText[4], 250);
+    }
+    gameTrueBtn.disabled = true;
+    gameFalseBtn.disabled = true;
+    fadeIn(gameNextBtn, 250);
+});
+
+gameFalseBtn.addEventListener("click", () => {
+    if (currentFact.answer === "False") {
+        gameText[3].innerHTML = "Correct! This is false.";
+        gameText[4].innerHTML = currentFact.explanation;
+        fadeIn(gameText[3], 250);
+        fadeIn(gameText[4], 250);
+    }
+    else if (currentFact.answer === "True") {
+        gameText[3].innerHTML = "Incorrect. This is a true fact.";
+        fadeIn(gameText[3], 250);
+        fadeIn(gameText[4], 250);
+    }
+    gameTrueBtn.disabled = true;
+    gameFalseBtn.disabled = true;
+    fadeIn(gameNextBtn, 250);
+});
+
+gameNextBtn.addEventListener("click", () => {
+    playGame();
+    gameTrueBtn.disabled = false;
+    gameFalseBtn.disabled = false;
+    fadeOut(gameNextBtn, 250);
+    fadeOut(gameText[3], 250);
+    fadeOut(gameText[4], 250);
+});
 
 function stretchWidth(element, startWidth, endWidth, duration) {
     const widthFrames = [
@@ -202,7 +320,9 @@ function fadeIn(element, duration) {
 
 
 
-gameStartBtn.addEventListener('click', () => {startGame()});
+gameStartBtn.addEventListener('click', () => startGame());
+
+gameResetBtn.addEventListener('click', () => resetGame());
 
 
 
