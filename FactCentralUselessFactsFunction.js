@@ -5,11 +5,11 @@
  * @type {HTMLElement} FactCentralUselessFacts.html
  * @author astephan18@georgefox.edu
  */
-// Setting up relevant variables
 // Getting buttons
 let homeBtn = document.getElementById("homeBtn");
-let getFactBtn = document.getElementById("getFactBtn");
 let animalFactsBtn = document.getElementById("animalFactsBtn");
+let factsGameBtn = document.getElementById("factsGameBtn");
+let getFactBtn = document.getElementById("getFactBtn");
 
 // Getting properties
 let screenWidth = screen.width;
@@ -27,13 +27,21 @@ htmlRoot.style.setProperty("--page-width", `${screenWidth}px`)
  */
 homeBtn.addEventListener('click', () => {
     window.location = "FactCentralHome.html";
+    console.log("we're in");
 });
 
 /**
- * Event listener to link the "Useless Facts" button to the corresponding page.
+ * Event listener to link the "Animal Facts" button to the homepage.
  */
 animalFactsBtn.addEventListener('click', () => {
-    window.location = "FactCentralUselessFacts.html";
+    window.location = "FactCentralAnimalFacts.html";
+});
+
+/**
+ * Event listener to link the "Fact or Fiction?" button to the homepage.
+ */
+factsGameBtn.addEventListener('click', () => {
+    window.location = "FactCentralGame.html";
 });
 
 /**

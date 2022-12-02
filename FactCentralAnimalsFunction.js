@@ -10,6 +10,7 @@
 let homeBtn = document.getElementById("homeBtn");
 let getFactBtn = document.getElementById("getFactBtn");
 let uselessFactsBtn = document.getElementById("uselessFactsBtn");
+let factGameBtn = document.getElementById("factsGameBtn");
 
 // Getting properties
 let screenWidth = screen.width;
@@ -35,6 +36,13 @@ homeBtn.addEventListener('click', () => {
  */
 uselessFactsBtn.addEventListener('click', () => {
    window.location = "FactCentralUselessFacts.html";
+});
+
+/**
+ * Event listener to link the "Fact or Fiction?" button to the corresponding page.
+ */
+factGameBtn.addEventListener('click', () => {
+   window.location = "FactCentralGame.html";
 });
 
 /**

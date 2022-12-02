@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fact Central - Useless?</title>
+  <link rel="stylesheet" href="FactCentralStyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Cairo+Play:wght@300;500&family=M+PLUS+Rounded+1c:wght@300;700&family=Rajdhani:wght@300&family=Satisfy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300;400&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="pageHeader">
+  <img class="pageIcon" src="https://cdn-icons-png.flaticon.com/512/858/858045.png" alt="lightbulb">
+  <h1>Fact Central</h1>
+  <span class="menuItems">
+        <button class="navBtn inHeader" id="homeBtn">home</button>
+        <button class="navBtn inHeader" id="animalFactsBtn">animal facts</button>
+        <button class="navBtn inHeader" id="factOrFictBtn">fact or fiction?</button>
+    </span>
+</div>
+<div class="mainPage" id="mainPageContainer">
+  <div class="pageTile" id="titleTile">
+    <div>
+      <h2>Fact or Fiction? A Game...</h2>
+      <p>
+        There's only one thing more useless than a useless fact:
+        a useless fact in a language you don't understand! (The API currently only supports two)
+      </p><br>
+      <form class="customSelect">
+        <label for="language">Select a language,</label>
+        <label for="getFactBtn">get a fact:</label><br>
+        <select id="language">
+          <option value="en">English</option>
+          <option value="de">German</option>
+        </select>
+        <input type="submit" id="getFactBtn" value="Go!">
+      </form>
+    </div>
+  </div>
+  <div id="factsContainer">
+  </div>
+</div>
+<script src="FactCentralGetAPIs.js"></script>
+<script src="FactCentralUselessFactsFunction.js"></script>
+</body>
+</html>
