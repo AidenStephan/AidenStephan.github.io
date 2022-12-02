@@ -21,12 +21,16 @@
     <div class="pageTile" id="titleTile">
         <div>
             <h2>Useless Facts</h2>
+            <p>
+                There's only one thing more useless than a useless fact:
+                a useless fact in a language you don't understand! (The API currently only supports two)
+            </p><br>
             <form class="customSelect">
-                <label for="animalType">Select an animal,</label>
+                <label for="language">Select a language,</label>
                 <label for="getFactBtn">get a fact:</label><br>
-                <select id="animalType">
-                    <option value="cat">Cat</option>
-                    <option value="dog">Dog</option>
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="de">German</option>
                 </select>
                 <input type="submit" id="getFactBtn" value="Go!">
             </form>
@@ -35,6 +39,7 @@
     <div id="factsContainer">
     </div>
 </div>
-<script src="FactCentralAnimalsFunction.js"></script>
+<script src="FactCentralGetAPIs.js"></script>
+<script src="FactCentralUselessFactsFunction.js"></script>
 </body>
 </html>

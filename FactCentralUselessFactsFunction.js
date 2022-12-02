@@ -1,23 +1,22 @@
 // ----------------------------------------- VARIABLES AND SETUP ----------------------------------------
 /**
- * Provides the function for the Animal Facts page on the Facts Central website.
+ * Provides the function for the "Useless Facts" page of my Fact Central webpage.
  *
- * @type {HTMLElement} FactCentralAnimalFacts.html
+ * @type {HTMLElement} FactCentralUselessFacts.html
  * @author astephan18@georgefox.edu
  */
 // Setting up relevant variables
 // Getting buttons
 let homeBtn = document.getElementById("homeBtn");
 let getFactBtn = document.getElementById("getFactBtn");
-let uselessFactsBtn = document.getElementById("uselessFactsBtn");
+let animalFactsBtn = document.getElementById("animalFactsBtn");
 
 // Getting properties
 let screenWidth = screen.width;
 let htmlRoot = document.querySelector(":root");
 
 // Animal facts API urls
-let catFactsUrl = "https://meowfacts.herokuapp.com/"
-let dogFactsUrl =  "https://api.codetabs.com/v1/proxy?quest=https://dog-api.kinduff.com/api/facts";
+let uselessFactsUrl = "https://uselessfacts.jsph.pl/random.json?language="
 
 // Set page width variable in the CSS file on page load.
 htmlRoot.style.setProperty("--page-width", `${screenWidth}px`)
@@ -27,30 +26,30 @@ htmlRoot.style.setProperty("--page-width", `${screenWidth}px`)
  * Event listener to link the "Home" button to the homepage.
  */
 homeBtn.addEventListener('click', () => {
-   window.location = "FactCentralHome.html";
+    window.location = "FactCentralHome.html";
 });
 
 /**
  * Event listener to link the "Useless Facts" button to the corresponding page.
  */
-uselessFactsBtn.addEventListener('click', () => {
-   window.location = "FactCentralUselessFacts.html";
+animalFactsBtn.addEventListener('click', () => {
+    window.location = "FactCentralUselessFacts.html";
 });
 
 /**
  * Event listener to get animal facts from the appropriate API when the "get facts" button is clicked.
  */
 getFactBtn.addEventListener("click", e => {
-   e.preventDefault();
+    e.preventDefault();
 
-   // Get the animal type selected by the user.
-   let animalType = document.getElementById("animalType").value;
+    // Get the animal type selected by the user.
+    let language = document.getElementById("language").value;
 
-   // Get the data from the appropriate API and call the functions to parse and display it.
-   if (animalType === "cat") {
-      getFact(catFactsUrl, "Object.values(receivedData)[0][0]");
-   }
-   else if (animalType === "dog") {
-      getFact(dogFactsUrl, "Object.values(receivedData)[0][0]");
-   }
+    // Get the data from the appropriate API, parse the fact, and display it.
+    if (language === "en") {
+        getFact(`${uselessFactsUrl}en`, "Object.values(receivedData)[1]");
+    }
+    else if (language === "de") {
+        getFact(`${uselessFactsUrl}de`, "Object.values(receivedData)[1]");
+    }
 });
