@@ -27,7 +27,6 @@ htmlRoot.style.setProperty("--page-width", `${screenWidth}px`)
  */
 homeBtn.addEventListener('click', () => {
     window.location = "FactCentralHome.html";
-    console.log("we're in");
 });
 
 /**

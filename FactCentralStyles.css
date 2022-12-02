@@ -46,29 +46,36 @@ h1 {
 
 /*--------------------------- BUTTONS --------------------------*/
 /* Navigation Buttons */
-.navBtn {
+.navBtn, #gameResetBtn {
     background-image: linear-gradient(to top left, var(--dark-yellow), var(--yellow));
     border: 2px var(--blue-green) solid;
     color: var(--blue-green);
     padding: 1vw;
 }
 
-#getFactBtn {
+#getFactBtn, #gameStartBtn {
     background-color: var(--blue-green);
     border: 2px var(--blue-green) solid;
     color: var(--light-blue);
     width: 10vw;
     flex: 1;
     height: 50px;
+    opacity: 1;
 }
 
-.navBtn, #getFactBtn {
+#gameResetBtn {
+    height: 50px;
+    width: 10vw;
+    display: none;
+}
+
+.navBtn, #getFactBtn, #gameStartBtn, #gameResetBtn {
     border-radius: 10px;
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: calc(0.2 * var(--page-width))pt;
 }
 
-#getFactBtn:hover {
+#getFactBtn:hover, #gameStartBtn:hover {
     cursor: pointer;
     border: 2px var(--dark-blue) solid;
     font-weight: bold;
@@ -195,3 +202,17 @@ select {
     background-image: linear-gradient(to top left, var(--dark-yellow), var(--yellow));
 }
 
+/*---------------------- FACTS GAME ------------------------*/
+#gameContainer {
+    margin-top: 1vw;
+    border-radius: 10px;
+    display: none;
+    background-color: black;
+    width: 10%;
+    height: 10%;
+    padding: 2vw;
+}
+
+.gameText {
+    color: white;
+}

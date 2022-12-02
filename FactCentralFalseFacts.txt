@@ -1,0 +1,102 @@
+{
+    "1": {
+        "text": "The Wankel Rotary is a type of antique Kitchen Device.",
+        "answer": "False.",
+        "explanation": "It’s a type of internal combustion engine."
+    },
+    "2": {
+        "text": "Pythagoras, after relating the sides of the triangle, figured out how to measure density using water displacement.",
+        "answer": "False.",
+        "explanation": "Archimedes was the man who figured this out. When he finally did, he was so excited he ran naked through the streets of Syracuse yelling “Eureka!”"
+    },
+    "3": {
+        "text": "Daddy long legs are spiders.",
+        "answer": "False.",
+        "explanation": "Scientists categorize them as “harvestmen” (order Opiliones), as they do not have the multiple body segments of a spider."
+    },
+    "4": {
+        "text": "The first type of computer was invented in the late 1950s.",
+        "answer": "False.",
+        "explanation": "Although digital computers are newer, analog computers have been around for millennia.  The first known example is the Antikythera mechanism from the 2nd century BC."
+    },
+    "5": {
+        "text": "A modem is a device used to route internet traffic on localized internet networks.",
+        "answer": "False.",
+        "explanation": "Routers route traffic. A modem provides the link between the local area network (LAN) and the rest of the internet at large (WAN)."
+    },
+    "6": {
+        "text": "A penny dropped from the top of the Empire State Building could kill you.",
+        "answer": "False.",
+        "explanation": "The falling penny can only go so fast before air resistance keeps it from speeding up further. Chances of it even hitting you are low, and if it did, severe injury is unlikely. MythBusters did an episode that explains this very well."
+    },
+    "7": {
+        "text": "It takes several years for your body to digest a piece of gum.",
+        "answer": "False.",
+        "explanation": "It might if it stayed inside your digestive track, but swallowed gum will pass right through and leave your body in a matter of hours."
+    },
+    "8": {
+        "text": "Hair and fingernails continue to grow after death.",
+        "answer": "False.",
+        "explanation": "This morbid and weirdly persistent myth is unfounded, and your cells die only minutes after the body as a whole."
+    },
+    "9": {
+        "text": "Cracking your knuckles will give you arthritis.",
+        "answer": "False.",
+        "explanation": "Although this has been proven by many highly qualified individuals, the most dedicated was a man who intentionally made a habit of popping his knuckles on only one hand for decades to compare it to the other."
+    },
+    "10": {
+        "text": "There were three wise men who attended the birth of Jesus.",
+        "answer": "False.",
+        "explanation": "There were wise men, but the gospel never mentions how many. The provision of three gifts by the unknown number of wise men is thought to have been extrapolated on over time."
+    },
+    "11": {
+        "text": "Einstein failed math.",
+        "answer": "False.",
+        "explanation": "He failed a school entrance exam but was always excellent at mathematics. He once stated he had mastered differential and integral calculus by age 15."
+    },
+    "12": {
+        "text": "Your body loses the most heat through your head.",
+        "answer": "False.",
+        "explanation": "This may only be the case if you’re thoroughly bundled up but leave your head uncovered."
+    },
+    "13": {
+        "text": "Goldfish have a three-second memory span.",
+        "answer": "False.",
+        "explanation": "Goldfish are smart as far as fish go and can remember things for months or even years. They are known to recognize specific individuals and have even been taught to navigate mazes."
+    },
+    "14": {
+        "text": "Vikings wore metal helmets with horns on them.",
+        "answer": "False.",
+        "explanation": "There is no evidence Vikings wore horns on their helmets, and this legend likely originated with costume designers for 19th century Scandinavian operas."
+    },
+    "15": {
+        "text": "Bagpipes are Scottish.",
+        "answer": "False.",
+        "explanation": "Centuries before being introduced to Europe, bagpipes were a prevalent middle eastern instrument."
+    },
+    "16": {
+        "text": "Bats are blind.",
+        "answer": "False.",
+        "explanation": "They can see AND navigate by echolocation – cool!"
+    },
+    "17": {
+        "text": "Lightning never strikes the same place twice.",
+        "answer": "False.",
+        "explanation": "Especially if an object is tall, it may attract lightning repeatedly. So if you ever get struck by lightning and survive, don't just keep standing there."
+    },
+    "18": {
+        "text": "Your tongue has multiple separate sections for tasting different flavors.",
+        "answer": "False.",
+        "explanation": "While there are a limited number of flavors your tongue can detect, they can be tasted all at once by any part of it."
+    },
+    "19": {
+        "text": "You should never wake a sleepwalker.",
+        "answer": "False.",
+        "explanation": "They might be really confused, but it’s better to wake them up so they don’t accidentally hurt themselves."
+    },
+    "20": {
+        "text": "Bulls hate the color red.",
+        "answer": "False.",
+        "explanation": "Bulls are color-blind. In bull fights, the bulls feel threatened by the rapid unpredictable movement of the bullfighter’s cloth."
+    }
+}
