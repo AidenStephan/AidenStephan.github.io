@@ -147,7 +147,7 @@ h1 {
 
 /* Navigation Tile When it is Being Clicked */
 .navTile:active {
-    color: var(--dark-yellow);
+    color: var(--blue-green);
 }
 
 /* Navigation Tile Hover */

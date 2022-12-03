@@ -9,6 +9,7 @@ let falseFactsData;
 let trueFactsData;
 
 let factIndex = 0;
+let correctCount = 0;
 
 // Getting buttons
 let homeBtn = document.getElementById("homeBtn");
@@ -107,8 +108,8 @@ function resetGame() {
 
     gameText[0].getAnimations()[0].finished.then(() => {
         fadeOut(gameContainer, 750);
-        stretchHeight(gameContainer, gameContainer.style.height, "10%", 500);
-        stretchWidth(gameContainer, gameContainer.style.width, "10%", 500);
+        stretchHeight(gameContainer, gameContainer.style.height, "0px", 500);
+        stretchWidth(gameContainer, gameContainer.style.width, "0px", 500);
         gameContainer.getAnimations()[0].finished.then(() => {
             stretchHeight(titleTile,
                 `${titleTile.offsetHeight}px`,
@@ -117,6 +118,7 @@ function resetGame() {
         });
     });
     factIndex = 0;
+    correctCount = 0;
 }
 
 function startGame() {
@@ -147,7 +149,6 @@ function startGame() {
         trueFactsData = Object.values(factsData);
         playGame();
     });
-
 }
 
 function displayResults() {
@@ -182,6 +183,7 @@ gameTrueBtn.addEventListener("click", () => {
         gameText[4].innerHTML = "Well done!";
         fadeIn(gameText[3], 250);
         fadeIn(gameText[4], 250);
+        correctCount ++;
     }
     gameTrueBtn.disabled = true;
     gameFalseBtn.disabled = true;
@@ -194,6 +196,7 @@ gameFalseBtn.addEventListener("click", () => {
         gameText[4].innerHTML = currentFact.explanation;
         fadeIn(gameText[3], 250);
         fadeIn(gameText[4], 250);
+        correctCount ++;
     }
     else if (currentFact.answer === "True") {
         gameText[3].innerHTML = "Incorrect. This is a true fact.";
@@ -271,54 +274,6 @@ function fadeIn(element, duration) {
 
     element.animate(fadeInFrames, fadeInTiming);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function fadeOut(element, speed) {
-//     let animation = null;
-//     let opacity = 1;
-//
-//     clearInterval(animation);
-//
-//     animation = setInterval(() => {
-//         if (opacity < 0.0001) {
-//             clearInterval(animation);
-//         }
-//         else {
-//             opacity -= 0.01;
-//             element.style.opacity = opacity;
-//         }
-//     }, speed);
-//
-//     Promise.all(element.getAnimations().map((animation) => animation.finished)).then(
-//         () => element.remove()
-//     );
-//
-//     animation.finished.then(() => console.log("HI"));
-//
-//     // element.getAnimations()[0].finished.then(
-//     //     () => element.style.display = "none"
-//     // );
-// }
-
-
-
-
-
-
-
-
-
 
 gameStartBtn.addEventListener('click', () => startGame());
 
