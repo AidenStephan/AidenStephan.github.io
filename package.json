@@ -1,0 +1,8 @@
+{
+  "name": "Website",
+  "version": "1.0.0",
+  "dependencies": {
+    "chart": "^0.1.2",
+    "chart.js": "^4.0.1"
+  }
+}

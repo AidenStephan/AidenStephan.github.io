@@ -18,32 +18,54 @@
   </span>
 </div>
 <div class="mainPage" id="mainPageContainer">
-  <div class="pageTile" id="titleTile">
+  <div class="pageTile">
     <div>
       <h2>Fact or Fiction? A Game...</h2>
       <p>
         The world is full of information, but a lot of it is junk. Can you tell the difference?
       </p><br>
-      <button id="gameStartBtn">Start!</button>
-      <button id="gameResetBtn">Reset</button>
+      <button id="gameStartBtn" class="gameControlBtn">Start!</button>
+      <button id="gameResetBtn" class="gameControlBtn">Reset</button>
       <div id="gameContainer">
-        <span>
+        <div>
           <p class="gameText">Question <span>1</span>/10</p>
           <p class="gameText"></p>
           <button id="gameTrueBtn" class="inGameBtn">True</button>
           <button id="gameFalseBtn" class="inGameBtn">False</button>
           <button id="gameNextBtn" class="inGameBtn">Next ></button>
-        </span>
-        <span>
           <p class="gameText">Result:</p>
-          <p class="gameText">TRUE!</p>
           <p class="gameText"></p>
-        </span>
+          <p class="gameText"></p>
+          <div id="chartArea"></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<!--<script src="./node_modules/chart.js/dist/chart.umd.js"></script>-->
+<!--<script>-->
+<!--  const ctx = document.getElementById('chartArea');-->
+
+<!--  new Chart(ctx, {-->
+<!--    type: 'bar',-->
+<!--    data: {-->
+<!--      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],-->
+<!--      datasets: [{-->
+<!--        label: '# of Votes',-->
+<!--        data: [12, 19, 3, 5, 2, 3],-->
+<!--        borderWidth: 1-->
+<!--      }]-->
+<!--    },-->
+<!--    options: {-->
+<!--      scales: {-->
+<!--        y: {-->
+<!--          beginAtZero: true-->
+<!--        }-->
+<!--      }-->
+<!--    }-->
+<!--  });-->
+<!--</script>-->
 <script src="FactCentralGetAPIs.js"></script>
-<script src="FactCentralGameFunction.js"></script>
+<script type="module" src="FactCentralGameFunction.js"></script>
 </body>
 </html>

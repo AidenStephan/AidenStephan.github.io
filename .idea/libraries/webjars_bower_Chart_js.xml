@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="webjars.bower.Chart.js" type="repository">
+    <properties maven-id="org.webjars.bower:Chart.js:2.5.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bower/Chart.js/2.5.0/Chart.js-2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

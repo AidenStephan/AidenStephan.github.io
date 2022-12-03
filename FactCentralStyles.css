@@ -44,83 +44,134 @@ h1 {
     border-radius: 100%;
 }
 
-/*--------------------------- BUTTONS --------------------------*/
-/* Navigation Buttons */
-.navBtn, #gameResetBtn, #gameNextBtn {
-    background-image: linear-gradient(to top left, var(--dark-yellow), var(--yellow));
-    border: 2px var(--blue-green) solid;
-    color: var(--blue-green);
-    padding: 1vw;
-}
-
-#getFactBtn, #gameStartBtn, #gameTrueBtn {
-    background-color: var(--blue-green);
-    border: 2px var(--blue-green) solid;
-    color: var(--light-blue);
-    width: 10vw;
-    flex: 1;
-    height: 50px;
-    opacity: 1;
-}
-
-#gameResetBtn {
-    height: 50px;
-    width: 10vw;
-    display: none;
-}
-
-#gameFalseBtn {
-    height: 50px;
-    width: 10vw;
-    background-color: darkred;
-    color: white;
-    border-color: darkred;
-}
-
-#gameTrueBtn, #gameFalseBtn, #gameNextBtn {
-    height: 50px;
-    width: 10vw;
-    border-radius: 10px;
-    font-family: 'Amatic SC', cursive;
-    font-size: 20pt;
-    display: none;
-}
-
-.navBtn, #getFactBtn, #gameStartBtn, #gameResetBtn {
-    border-radius: 10px;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: calc(0.2 * var(--page-width))pt;
-}
-
-#getFactBtn:hover, #gameStartBtn:hover, #gameTrueBtn:hover, #gameFalseBtn:hover, #gameNextBtn:hover {
-    cursor: pointer;
-    border: 2px var(--dark-blue) solid;
-    font-weight: bold;
-    outline: none;
-}
-
-/* Button & Nav Tile Hover */
-.navBtn:hover, .btnHover {
-    cursor: pointer;
-    border: 2px var(--light-blue) solid;
-    font-weight: bold;
-    outline: none;
-}
-
+/* Menu buttons flex parent */
 .menuItems {
     display: flex;
     float: right;
     width: 50vw;
 }
 
+/*--------------------------- BUTTONS --------------------------*/
+/* --------------- BUTTON COLORS --------------- */
+/* Yellow colored buttons */
+.navBtn, #gameResetBtn, #gameNextBtn {
+    background-image: linear-gradient(to top left, var(--dark-yellow), var(--yellow));
+    color: var(--blue-green);
+}
+
+/* Blue-green colored buttons */
+#getFactBtn, #gameStartBtn, #gameTrueBtn {
+    background-color: var(--blue-green);
+    color: var(--light-blue);
+    opacity: 1;
+}
+
+/* Red buttons (the "False" button in the facts game) */
+#gameFalseBtn {
+    background-color: darkred;
+    color: white;
+}
+
+/* --------------- BUTTON BORDERS --------------- */
+/* All buttons have rounded corners */
+.inGameBtn, .navBtn, .gameControlBtn, #getFactBtn {
+    border-radius: 10px;
+}
+
+/* Buttons with blue-green borders */
+#getFactBtn, .gameControlBtn, #gameTrueBtn, .navBtn, #gameNextBtn {
+    border: 2px var(--blue-green) solid;
+}
+
+/* Buttons with dark red border (the "False" button in the facts game) */
+#gameFalseBtn {
+    border-color: darkred;
+}
+
+/* Buttons with dark border on hover */
+#getFactBtn:hover, .gameControlBtn:hover, .inGameBtn:hover {
+    border: 2px var(--dark-blue) solid;
+}
+
+/* Buttons with light border on hover */
+.navBtn:hover, .btnHover {
+    border: 2px var(--light-blue) solid;
+}
+
+/* --------------- BUTTON MARGINS --------------- */
+/* Buttons with all margins except left */
+#gameTrueBtn, #gameFalseBtn {
+    margin: 1vw 1vw 1vw 0;
+}
+
+/* Buttons with bottom margin only */
+#gameStartBtn, #gameResetBtn {
+    margin-bottom: 1vw;
+}
+
+/* Buttons with small margin on all sides */
 .inHeader {
-    flex: 1;
     margin: 0.6vw;
 }
 
+/* --------------- BUTTON PADDING --------------- */
+/* Buttons with normal padding */
+.navBtn, .gameControlBtn {
+    padding: 1vw;
+}
+
+/* Buttons with thin padding (the in-game buttons) */
+.inGameBtn {
+    padding: 0.5vw;
+}
+
+/* --------------- BUTTON SIZE --------------- */
+/* Setting all buttons to uniform width and height */
+.inGameBtn, .gameControlBtn, #getFactBtn {
+    height: 50px;
+    width: 10vw;
+}
+
+/* Buttons with 100% width */
 .inNavTile {
     width: 100%;
 }
+
+/* --------------- BUTTON FONTS --------------- */
+/* Buttons with "Handwriting" style Amatic SC font */
+.inGameBtn {
+    font-family: 'Amatic SC', cursive;
+    font-size: 20pt;
+}
+
+/* Buttons with normal title font (Alegreya Sans SC) */
+.navBtn, #getFactBtn, .gameControlBtn {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: calc(0.2 * var(--page-width))pt;
+}
+
+/* All buttons have bold font on hover */
+#getFactBtn:hover, .gameControlBtn:hover, .inGameBtn:hover, .navBtn:hover, .btnHover {
+    font-weight: bold;
+}
+
+
+#gameResetBtn, #gameTrueBtn, #gameNextBtn, #gameFalseBtn {
+    display: none;
+}
+
+/* ---------- BUTTON DISPLAY OPTIONS ---------- */
+/* Header button flex display */
+.inHeader {
+    flex: 1;
+}
+
+/*  */
+#getFactBtn:hover, .gameControlBtn:hover, .inGameBtn:hover, .navBtn:hover, .btnHover {
+    cursor: pointer;
+    outline: none;
+}
+
 
 /*---------------- NAVIGATION TILES (HOME PAGE) ---------------*/
 /* Navigation Tile Container Div */
@@ -179,6 +230,7 @@ body {
     border-radius: 10px;
 }
 
+/* Display style for the title tile */
 #titleTile {
     display: flex;
 }
@@ -192,16 +244,19 @@ body {
 }
 
 /*------------------------ PAGE TEXT ------------------------*/
+/* Text alignment */
 p {
     text-align: justify;
 }
 
+/* Heading 2 */
 h2 {
     margin-bottom: 0.5vw;
     font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 /*--------------------- DROPDOWN SELECT ----------------------*/
+/* Dropdown options */
 option {
     font-family: "Times New Roman", serif;
     font-size: 11pt;
@@ -209,6 +264,7 @@ option {
     background-color: var(--dark-yellow);
 }
 
+/* Drop down button */
 select {
     width: 200px;
     font-family: "Times New Roman", serif;
@@ -220,17 +276,21 @@ select {
 }
 
 /*---------------------- FACTS GAME ------------------------*/
+/* Div element containing the facts game */
 #gameContainer {
-    margin-top: 1vw;
+    /*margin-top: 1vw;*/
     border-radius: 10px;
     display: none;
     background-color: black;
-    width: 10%;
-    height: 10%;
-    padding: 2vw;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
+/* Text displayed in the facts game */
 .gameText {
     display: none;
     color: white;
+    overflow: auto;
 }
