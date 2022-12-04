@@ -8,13 +8,13 @@
  * @author astephan18@georgefox.edu
  */
 
-// import Chart from "chart.js/auto";
 // Variables to hold facts from API
 let falseFactsData;
 let trueFactsData;
 
-// Variable to count the number of facts shown in a game.
+// Variables to count the number of facts shown in a game.
 let factIndex = 0;
+let totalFacts = 10;
 
 // Variable to count the number of correct guesses from the user.
 let correctCount = 0;
@@ -31,6 +31,11 @@ let gameNextBtn = document.getElementById("gameNextBtn");
 
 // Getting the game text.
 let gameText = document.getElementsByClassName("gameText");
+
+// Getting the game results chart.
+let resultChart = document.getElementById('myChart');
+let chartContainer = document.getElementById("chartContainer");
+let resultPieGraph = null;
 
 // URLs
 let falseFactsUrl = "FactCentralFalseFacts.txt";
@@ -135,6 +140,7 @@ function resetGame() {
     fadeOut(gameText[4], 250);
     fadeOut(gameTrueBtn, 250);
     fadeOut(gameFalseBtn, 250);
+    fadeOut(chartContainer, 250);
 
     // Resets the text elements.
     gameText[3].innerHTML = ""
@@ -151,6 +157,11 @@ function resetGame() {
     // Reset the variables holding the number of facts shown in game and the number of correct guesses.
     factIndex = 0;
     correctCount = 0;
+
+    // Destroy the graph, so it can be re-created after the next game.
+    if (resultPieGraph != null) {
+        resultPieGraph.destroy();
+    }
 }
 
 /**
@@ -199,9 +210,18 @@ function displayResults() {
     fadeOut(gameFalseBtn);
     fadeOut(gameNextBtn);
 
+    // Stretch the container height to display the graph.
+    stretchHeight(gameContainer, gameContainer.style.height, "50vh", 500);
+
+    // After the container heightens, display the graph.
+    gameContainer.getAnimations()[0].finished.then(() => {
+        graphResult();
+        fadeIn(chartContainer, 250, "block");
+    });
+
     // Changes the remaining inner text to display the game results.
     gameText[2].innerHTML = "Result:";
-    gameText[3].innerHTML = String(100 * correctCount/10) + "%";
+    gameText[3].innerHTML = String(100 * correctCount/totalFacts) + "%";
 
     // Displays "success" message if a score above 70% is achieved. Otherwise, a "try again" message is shown.
     if (correctCount < 7) {
@@ -217,7 +237,7 @@ function displayResults() {
  */
 function playGame() {
     // If less than ten facts have been displayed and responded to, continue playing.
-    if (factIndex < 10) {
+    if (factIndex < totalFacts) {
         gameText[0].children[0].innerHTML = String(factIndex + 1);
         currentFact = getRandomFact();
         gameText[1].innerHTML = currentFact.text;
@@ -405,7 +425,7 @@ function advanceGame() {
     gameFalseBtn.disabled = false;
 
     // If the game is not done, get a new fact, continue playing, and fade out the result from the last guess.
-    if (factIndex < 10) {
+    if (factIndex < totalFacts) {
         playGame();
         fadeOut(gameText[3], 250);
         fadeOut(gameText[4], 250);
@@ -414,6 +434,33 @@ function advanceGame() {
     else {
         displayResults();
     }
+}
+
+/**
+ * Create a pie chart to graph the game results using Chart.js.
+ */
+function graphResult() {
+    resultPieGraph = new Chart(resultChart, {
+
+        // Create a pie chart of the correct and incorrect guesses.
+        type: 'pie',
+        data: {
+            labels: ['True', 'False'],
+            datasets: [{
+                label: 'Number of correct answers.',
+                data: [correctCount, totalFacts],
+                backgroundColor: [
+                    'darkgreen',
+                    'darkred',
+                ],
+                borderColor: [
+                    'green',
+                    'red',
+                ],
+                borderWidth: 2
+            }]
+        }
+    });
 }
 
 //------------------------------------------ EVENT LISTENERS --------------------------------------------

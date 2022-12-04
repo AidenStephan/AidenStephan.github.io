@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fact Central - Useless?</title>
+  <title>Fact Central - A Game</title>
   <link rel="stylesheet" href="FactCentralStyles.css">
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Cairo+Play:wght@300;500&family=M+PLUS+Rounded+1c:wght@300;700&family=Rajdhani:wght@300&family=Satisfy&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300;400&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/858/858045.png">
 </head>
 <body>
 <div class="pageHeader">
@@ -36,12 +37,15 @@
           <p class="gameText">Result:</p>
           <p class="gameText"></p>
           <p class="gameText"></p>
-          <div id="chartArea"></div>
+          <div id="chartContainer">
+            <canvas id="myChart" width="50px" height="50px"></canvas>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="FactCentralGetAPIs.js"></script>
 <script type="module" src="FactCentralGameFunction.js"></script>
 </body>

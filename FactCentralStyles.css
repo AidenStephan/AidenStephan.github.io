@@ -106,7 +106,7 @@ h1 {
 
 /* Buttons with bottom margin only */
 #gameStartBtn, #gameResetBtn {
-    margin-bottom: 1vw;
+    margin: 0 0 1vw 1vw;
 }
 
 /* Buttons with small margin on all sides */
@@ -293,4 +293,11 @@ select {
     display: none;
     color: white;
     overflow: auto;
+}
+
+/* The div container holding the chart */
+#chartContainer {
+    width: 80%;
+    height: 40vh;
+    display: none;
 }
